@@ -4,15 +4,8 @@ var fs = require('fs');
 
 var WhatFloor = function(input) {
 	// Starting point
-	var floor = 0,
-	basement = false,
-	position;
+	var floor = 0;
 	for (var i=0; i < input.length; i++) {
-		if (floor === -1) basement = !basement;
-		if (basement) {
-			position = i+1;
-			basement = null;
-		}
 		// Count floors
 		if (input[i] === '(') floor++;
 		else if (input[i] === ')') floor--;
